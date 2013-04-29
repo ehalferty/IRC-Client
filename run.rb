@@ -16,7 +16,7 @@ Curses.init_pair(UNHIGHLIGHTED, Curses::COLOR_WHITE, Curses::COLOR_BLACK)
 MOTD = 34
 Curses.init_pair(MOTD, Curses::COLOR_RED, Curses::COLOR_BLACK)
 
-connections_info = File.open("connections.conf") { |f| YAML::load(f) }
+connections_info = File.open("connections.yml") { |f| YAML::load(f) }
 abort("This script only supports 4 windows.") if (connections_info.length > 4)
 buffers = connections_info.map { |c| []}
 windows = connections_info.map.with_index { |c, i| ChatWindow.new(c, i) }
