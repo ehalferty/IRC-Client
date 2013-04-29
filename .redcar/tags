@@ -1,0 +1,18 @@
+1367264573
+ChatWindow	/home/ed/ruby/IRC-Client/ChatWindow.rb	class ChatWindow 
+CommandWindow	/home/ed/ruby/IRC-Client/CommandWindow.rb	class CommandWindow 
+HIGHLIGHTED	/home/ed/ruby/IRC-Client/run.rb	HIGHLIGHTED =
+MOTD	/home/ed/ruby/IRC-Client/run.rb	MOTD =
+UNHIGHLIGHTED	/home/ed/ruby/IRC-Client/run.rb	UNHIGHLIGHTED =
+WIN_HEIGHT	/home/ed/ruby/IRC-Client/ChatWindow.rb	WIN_HEIGHT =
+WIN_WIDTH	/home/ed/ruby/IRC-Client/ChatWindow.rb	WIN_WIDTH =
+append_line	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def append_line(line)
+append_lines	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def append_lines(line)
+fixed_getch	/home/ed/ruby/IRC-Client/CommandWindow.rb	    def fixed_getch
+go_to_end	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def go_to_end
+highlight	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def highlight(b)
+initialize	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def initialize(conn, i)
+run	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def run(conn, s)
+scroll_down	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def scroll_down
+scroll_up	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def scroll_up
+update	/home/ed/ruby/IRC-Client/ChatWindow.rb	    def update()

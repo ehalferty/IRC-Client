@@ -1,0 +1,9 @@
+--- 
+cursor_positions: 
+  - :path: README.md
+    :cursor_offset: 127
+    :timestamp: 2013-04-29 15:42:37 -04:00
+  - :path: connections.conf
+    :cursor_offset: 0
+    :timestamp: 2013-04-29 15:28:32 -04:00
+files_to_retain: 0
