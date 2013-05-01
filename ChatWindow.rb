@@ -86,6 +86,14 @@ class ChatWindow < Curses::Window
                 s.append_lines(m.params[1])
             end
             
+            on :leaving do |m, user|
+                s.append_lines("*#{user} left.*")
+            end
+            
+            on :join do |m|
+                s.append_lines("*#{m.user} joined.*")
+            end
+            
             on :message do |m|
                 s.append_lines("#{m.user.nick}: #{m.params[1]}")
             end
