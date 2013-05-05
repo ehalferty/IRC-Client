@@ -3,7 +3,11 @@ WIN_HEIGHT = 18
 
 
 class ChatWindow < Curses::Window
+    
+    attr_accessor :bot
+    
     def initialize(conn, i)
+        @conn = conn
         @buffer = []
         @position = 0
         @title = conn[:nick] + "@" + conn[:address] + "#" + conn[:channel]
@@ -27,14 +31,6 @@ class ChatWindow < Curses::Window
             addstr(@title)
             refresh
         end
-    end
-    
-    def append_line(line)
-        @buffer.unshift(line.to_s)
-        if (@position != 0)
-            @position += 1
-        end
-        update()
     end
     
     def scroll_up
@@ -64,12 +60,25 @@ class ChatWindow < Curses::Window
         refresh
     end
     
+    def append_line(line)
+        @buffer.unshift(line.to_s)
+        if (@position != 0)
+            @position += 1
+        end
+        update()
+    end
+    
     def append_lines(line)
         line.scan(/.{1,80}/).each { |line| append_line(line) }
     end
     
+    def send_message(msg)
+        @bot.irc.send("PRIVMSG #" + @conn[:channel] + " :" + msg + "\r\n")
+        append_line("#{@conn[:nick]}: #{msg}")
+    end
+    
     def run(conn, s)
-        bot = Cinch::Bot.new do
+        @bot = Cinch::Bot.new do
             configure do |conf|
                 conf.server = conn[:address]
                 conf.port = conn[:port]
@@ -98,7 +107,7 @@ class ChatWindow < Curses::Window
                 s.append_lines("#{m.user.nick}: #{m.params[1]}")
             end
         end
-        bot.start
+        @bot.start
     end
 end
 

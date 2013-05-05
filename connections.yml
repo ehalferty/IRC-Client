@@ -6,7 +6,7 @@
 - :address: irc.snsys.us
   :port: 6670
   :channel: openjk
-  :nick: ehalferty
+  :nick: ed
 - :address: irc.freenode.net
   :port: 6667
   :channel: rubyonrails
