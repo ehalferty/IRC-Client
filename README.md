@@ -7,7 +7,7 @@ A console-based IRC client that supports multiple connections and split windows
 
 Edit connections.yml, run
 
-  ruby run.rb
+    ruby run.rb
 
 ## Gems required
 

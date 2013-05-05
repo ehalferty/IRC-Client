@@ -1,7 +1,7 @@
 require "curses"
 require "yaml"
 require "cinch"
-require "pry"
+#require "pry"
 
 require_relative "CommandWindow"
 require_relative "ChatWindow"
