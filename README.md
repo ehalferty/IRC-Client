@@ -11,7 +11,7 @@ Edit connections.yml, run
 
 ## Gems required
 
-Cinch
+[Cinch](http://rubygems.org/gems/cinch)
 
 ## Controls
 
