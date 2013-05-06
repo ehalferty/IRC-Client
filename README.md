@@ -12,3 +12,9 @@ Edit connections.yml, run
 ## Gems required
 
 Cinch
+
+## Controls
+
+up arrow, down arrow - Scroll up/down
+page up, page down - Scroll a whole page up/down
+ctrl-up, ctrl-down - next/previous highlighted window
