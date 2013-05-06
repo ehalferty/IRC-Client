@@ -18,7 +18,12 @@ class CommandWindow < Curses::Window
             if (key2 == "O")
                 key += key2 + self.getch.to_s
             elsif (key2 == "[")
-                key += key2 + self.getch.to_s + self.getch.to_s
+                key3 = self.getch.to_s
+                if (key3 == "1")
+                    key += key2 + key3 + self.getch.to_s + self.getch.to_s + self.getch.to_s
+                else
+                    key += key2 + key3 + self.getch.to_s
+                end
             else
                 key += key2
             end

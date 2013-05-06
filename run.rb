@@ -67,14 +67,14 @@ begin
         when '17'
             abort()
 
-            # Next window (ctrl-j)
-        when '10'
+            # Next window (ctrl-down)
+        when "27[1;5B"
             windows[selected_window].highlight(false)
             selected_window  = (selected_window + 1) % windows.length
             windows[selected_window].highlight(true)
 
-            # Previous window (ctrl-k)
-        when '11'
+            # Previous window (ctrl-up)
+        when "27[1;5A"
             windows[selected_window].highlight(false)
             selected_window  = (selected_window - 1) % windows.length
             windows[selected_window].highlight(true)
@@ -85,7 +85,7 @@ begin
 
             # return
         when "ret"
-            cur_win.send_message(com_win.buffer)
+            cur_win.send_message(com_win.buffer) if (com_win.buffer != "")
             com_win.buffer = ""
             
             # Anything else

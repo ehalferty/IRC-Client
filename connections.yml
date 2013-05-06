@@ -1,12 +1,12 @@
 ---
-- :address: irc.arloria.net
-  :port: 6667
-  :channel: jacoders
-  :nick: ehalferty
 - :address: irc.snsys.us
   :port: 6670
   :channel: openjk
   :nick: ed
+- :address: irc.arloria.net
+  :port: 6667
+  :channel: jacoders
+  :nick: ehalferty
 - :address: irc.freenode.net
   :port: 6667
   :channel: rubyonrails
