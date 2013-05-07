@@ -4,7 +4,7 @@ WIN_HEIGHT = 18
 
 class ChatWindow < Curses::Window
     
-    attr_accessor :bot
+    attr_accessor :bot, :buffer
     
     def initialize(conn, i)
         @conn = conn

@@ -21,7 +21,6 @@ Curses.init_pair(MOTD, Curses::COLOR_RED, Curses::COLOR_BLACK)
 
 connections_info = File.open("connections.yml") { |f| YAML::load(f) }
 abort("This script only supports 4 windows.") if (connections_info.length > 4)
-buffers = connections_info.map { |c| []}
 windows = connections_info.map.with_index { |c, i| ChatWindow.new(c, i) }
 
 #Curses.close_screen
@@ -85,7 +84,19 @@ begin
 
             # return
         when "ret"
-            cur_win.send_message(com_win.buffer) if (com_win.buffer != "")
+            if (com_win.buffer.start_with? "/")
+                tokens = com_win.buffer[1..-1].split
+                case tokens[0]
+                when "save"
+                    connections_info.each_with_index do |conn, i|
+                        filename = Time.now.strftime("saved-#{conn[:address]}-#{conn[:channel]}-%Y%m%d-%H%M%S")
+                        File.open(filename, 'w') { |f| f.write(windows[i].buffer.join("\n")) }
+                    end
+                else
+                end
+            else
+                cur_win.send_message(com_win.buffer) if (com_win.buffer != "")
+            end
             com_win.buffer = ""
             
             # Anything else
