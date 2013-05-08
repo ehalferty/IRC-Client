@@ -74,7 +74,7 @@ class ChatWindow < Curses::Window
     
     def send_message(msg)
         @bot.irc.send("PRIVMSG #" + @conn[:channel] + " :" + msg + "\r\n")
-        append_line("#{@conn[:nick]}: #{msg}")
+        append_lines("#{@conn[:nick]}: #{msg}")
     end
     
     def run(conn, s)
