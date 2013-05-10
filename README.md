@@ -5,9 +5,9 @@ A console-based IRC client that supports multiple connections and split windows
 
 ## Usage
 
-Edit connections.yml, run
+Provide a YAML file with up to four connections (see connections.yml for an example), and run
 
-    ruby run.rb
+    ruby run.rb connections.yml
 
 ## Gems required
 
