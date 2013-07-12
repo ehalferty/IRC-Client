@@ -8,6 +8,11 @@ class CommandWindow < Curses::Window
         @status = ""
     end
     
+    # getch for Curses doesn't work well with some multi-byte keycodes.
+    # This is a workaround, and also kind of terrible. Eventually I should
+    # fix Curses, but then I would have to make decisions about how to map
+    # those keys to codes, which could cause problems for anyone who is
+    # relying on the current behavior, and possibly unaware of the fact.
     def fixed_getch
         key = self.getch.to_s
         if (key == "10")
